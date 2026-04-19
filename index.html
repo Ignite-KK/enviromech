@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Enviromech Solutions</title>
-  <meta name="description" content="Sustainable engineering, CAD optimization, and eco-friendly rapid prototyping solutions." />
-
-  <style>
+  <meta name="description" content="Sustainable engineering, CAD optimization, and eco-friendly rapid prototyping solutions." />  <style>
     *{
       margin:0;
       padding:0;
@@ -15,7 +12,7 @@
     }
 
     body{
-      background:#f4f7f5;
+      background:#f3f6f4;
       color:#1e1e1e;
     }
 
@@ -29,6 +26,7 @@
       color:white;
       position:sticky;
       top:0;
+      z-index:1000;
     }
 
     .nav a{
@@ -43,17 +41,38 @@
       background:linear-gradient(135deg,#0b3d2e,#1f8a5b);
       color:white;
       text-align:center;
-      padding:90px 20px;
+      padding:110px 20px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .logo{
+      width:70px;
+      height:70px;
+      background:white;
+      color:#0b3d2e;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:bold;
+      margin:0 auto 15px;
     }
 
     .hero h1{
-      font-size:44px;
+      font-size:48px;
+      animation:fadeIn 1s ease-in-out;
     }
 
     .hero p{
       margin-top:10px;
       font-size:18px;
       opacity:0.9;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0; transform:translateY(-20px)}
+      to{opacity:1; transform:translateY(0)}
     }
 
     .btn{
@@ -77,7 +96,7 @@
       color:white;
     }
 
-    /* SECTIONS */
+    /* CONTAINER */
     .container{
       max-width:1100px;
       margin:auto;
@@ -85,7 +104,7 @@
     }
 
     .section{
-      margin:60px 0;
+      margin:70px 0;
     }
 
     h2{
@@ -93,7 +112,7 @@
       margin-bottom:15px;
     }
 
-    /* CARDS */
+    /* GRID */
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -112,10 +131,17 @@
       transform:translateY(-6px);
     }
 
+    /* PROJECTS */
+    .project-img{
+      width:100%;
+      border-radius:10px;
+      margin-bottom:10px;
+    }
+
     /* CTA */
     .cta{
       text-align:center;
-      padding:40px;
+      padding:50px;
       background:#e8f5ee;
       border-radius:12px;
     }
@@ -128,80 +154,75 @@
       color:white;
       margin-top:40px;
     }
-  </style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<div class="nav">
+  </style></head><body><div class="nav">
   <div><b>Enviromech</b></div>
   <div>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
-</div>
-
-<!-- HERO -->
-<div class="hero">
+</div><div class="hero">
+  <div class="logo">EM</div>
   <h1>Build Smarter. Build Greener.</h1>
-  <p>Sustainable CAD Design & Rapid Prototyping Solutions</p>
+  <p>Sustainable CAD Design & Rapid Prototyping Solutions</p><a href="#contact" class="btn">Get Started</a>
 
-  <a href="#contact" class="btn">Get Started</a>
-
-  <!-- Replace number below with your real WhatsApp number -->
-  <a href="https://wa.me/91XXXXXXXXXX" class="btn green">WhatsApp Us</a>
-</div>
-
-<!-- CONTENT -->
-<div class="container">
-
-  <!-- ABOUT -->
-  <div class="section" id="about">
+</div><div class="container">  <div class="section" id="about">
     <h2>🌱 About Us</h2>
     <p>
-      Enviromech Solutions is focused on sustainable engineering, CAD optimization, and eco-friendly prototyping.
-      We help reduce material waste and improve design efficiency for students and startups.
+      Enviromech Solutions is a sustainable engineering startup focused on eco-friendly CAD design and rapid prototyping.
+      We help students and startups reduce cost, waste, and development time using smart engineering solutions.
     </p>
-  </div>
-
-  <!-- SERVICES -->
-  <div class="section" id="services">
-    <h2>⚙️ Our Services</h2>
+  </div>  <div class="section" id="services">
+    <h2>⚙️ Services</h2>
     <div class="grid">
       <div class="card">Eco-Friendly 3D Printing</div>
       <div class="card">CAD Design Optimization</div>
       <div class="card">Rapid Prototyping</div>
       <div class="card">Mechanical Simulation</div>
     </div>
-  </div>
-
-  <!-- WHY US -->
-  <div class="section">
-    <h2>🚀 Why Choose Us?</h2>
+  </div>  <div class="section" id="projects">
+    <h2>📊 Projects</h2>
     <div class="grid">
-      <div class="card">Reduce Material Waste</div>
-      <div class="card">Faster Product Development</div>
-      <div class="card">Cost-Effective Engineering</div>
-      <div class="card">Practical Design Solutions</div>
+      <div class="card">
+        <img class="project-img" src="https://images.unsplash.com/photo-1581091870622-1e7f8c0f5d7c" />
+        Optimized Flange Coupling Design
+      </div>
+      <div class="card">
+        <img class="project-img" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758" />
+        Lightweight Mechanical Frame
+      </div>
+      <div class="card">
+        <img class="project-img" src="https://images.unsplash.com/photo-1581093588401-12b6c3f2b4a6" />
+        Eco 3D Printed Prototype
+      </div>
     </div>
+  </div>  <div class="section" id="contact">
+    <h2>📩 Contact Us</h2>
+    <div class="grid"><div class="card">
+    <h3>WhatsApp 1</h3>
+    <p>9870694410</p>
+    <a class="btn green" href="https://wa.me/919870694410">Chat Now</a>
   </div>
 
-  <!-- CONTACT -->
-  <div class="section cta" id="contact">
-    <h2>📩 Contact Us</h2>
-    <p>Email: contact@enviromech.com</p>
+  <div class="card">
+    <h3>WhatsApp 2</h3>
+    <p>9528992913</p>
+    <a class="btn green" href="https://wa.me/919528992913">Chat Now</a>
+  </div>
 
-    <a href="mailto:contact@enviromech.com" class="btn">Email Us</a>
+  <div class="card">
+    <h3>Email</h3>
+    <p>krishnamathur00001@gmail.com</p>
+    <a class="btn" href="mailto:krishnamathur00001@gmail.com">Send Email</a>
   </div>
 
 </div>
 
-<!-- FOOTER -->
-<footer>
+  </div>  <div class="section cta">
+    <h2>Ready to Build Your Idea?</h2>
+    <p>Let’s turn engineering concepts into real-world sustainable products.</p>
+  </div></div><footer>
   © 2026 Enviromech Solutions | Sustainable Engineering Future
-</footer>
-
-</body>
+</footer></body>
 </html>
