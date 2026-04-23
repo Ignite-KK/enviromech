@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;scroll-behavior:smooth;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 
 body{
   background:linear-gradient(180deg,#031d15,#06281d,#0a3c2d);
@@ -17,136 +17,139 @@ body{
 
 /* NAV */
 .nav{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 40px;
-  position:sticky;top:0;
-  backdrop-filter:blur(12px);
+  display:flex;justify-content:space-between;
+  padding:20px 40px;
   background:rgba(255,255,255,0.05);
-  border-bottom:1px solid rgba(255,255,255,0.08);
-  z-index:1000;
+  backdrop-filter:blur(10px);
 }
 
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;}
-.logo img{width:45px;}
-.nav a{margin-left:20px;text-decoration:none;color:white;opacity:0.85;}
-.nav a:hover{opacity:1;}
+.logo{font-weight:700;font-size:20px;}
+
+.nav a{margin-left:20px;color:white;text-decoration:none;}
 
 /* HERO */
 .hero{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:100px 10%;
-  flex-wrap:wrap;
+  text-align:center;
+  padding:100px 20px;
 }
-
-.hero-text{max-width:550px;}
 
 .hero h1{
   font-size:48px;
-  line-height:1.2;
 }
 
-.hero span{
-  background:linear-gradient(90deg,#38d39f,#4fd1c5);
-  -webkit-background-clip:text;
-  color:transparent;
-}
+.hero span{color:#38d39f;}
 
-.hero p{
-  margin:20px 0;
-  opacity:0.8;
-}
-
-/* BUTTON */
 .btn{
   padding:12px 24px;
+  background:#25d366;
+  color:white;
   border-radius:10px;
   text-decoration:none;
-  margin-right:10px;
   display:inline-block;
-  font-weight:600;
-}
-
-.btn.primary{
-  background:linear-gradient(135deg,#25d366,#1fae56);
-  color:white;
-}
-
-.btn.secondary{
-  border:1px solid rgba(255,255,255,0.3);
-  color:white;
-}
-
-/* STATS */
-.stats{
-  display:flex;
-  gap:30px;
-  margin-top:30px;
-  flex-wrap:wrap;
-}
-
-.stat h3{color:#38d39f;}
-
-/* GLASS CARD */
-.card{
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(10px);
-  border-radius:16px;
-  padding:25px;
-  border:1px solid rgba(255,255,255,0.08);
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  margin-top:20px;
 }
 
 /* SECTION */
-.container{max-width:1200px;margin:auto;padding:60px 20px;}
+.container{max-width:1200px;margin:auto;padding:50px 20px;}
 .section{margin:80px 0;}
 
-h2{text-align:center;margin-bottom:40px;}
+h2{text-align:center;margin-bottom:30px;}
+
+/* DASHBOARD */
+.dashboard{
+  background:rgba(255,255,255,0.05);
+  border-radius:15px;
+  padding:20px;
+}
+
+.top-bar{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.metric{
+  background:#25d366;
+  padding:10px 15px;
+  border-radius:8px;
+}
+
+.graph{
+  height:150px;
+  background:linear-gradient(90deg,#25d366,#06281d);
+  border-radius:10px;
+  animation:graphMove 4s infinite alternate;
+}
+
+@keyframes graphMove{
+  from{transform:scaleX(0.9);}
+  to{transform:scaleX(1);}
+}
+
+/* CAD DEMO */
+.demo{
+  background:black;
+  height:200px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation:rotate 6s linear infinite;
+}
+
+@keyframes rotate{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+
+/* AI CHAT */
+.chat{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:12px;
+}
+
+.msg{
+  background:#25d366;
+  padding:10px;
+  border-radius:10px;
+  margin:10px 0;
+  opacity:0;
+  animation:fadeIn 1s forwards;
+}
+
+.msg:nth-child(1){animation-delay:1s;}
+.msg:nth-child(2){animation-delay:2s;}
+.msg:nth-child(3){animation-delay:3s;}
+
+@keyframes fadeIn{
+  to{opacity:1;}
+}
 
 /* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+  gap:20px;
 }
 
-/* PRICING */
-.pricing{
-  text-align:center;
-  padding:40px;
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:12px;
 }
 
 /* CONTACT */
-.contact-card{
-  background:linear-gradient(135deg,#25d366,#128c7e);
-  padding:25px;
-  border-radius:16px;
+.contact{
+  background:#25d366;
+  padding:20px;
+  border-radius:12px;
   text-align:center;
 }
 
-/* FOOTER */
 footer{
   text-align:center;
-  padding:30px;
-  opacity:0.7;
-}
-
-/* ANIMATION */
-.fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:0.6s;
-}
-
-.fade.show{
-  opacity:1;
-  transform:translateY(0);
+  padding:20px;
 }
 </style>
 </head>
@@ -155,89 +158,78 @@ footer{
 
 <!-- NAV -->
 <div class="nav">
-  <div class="logo">
-    <img src="logo.png">
-    Enviromech
-  </div>
-
+  <div class="logo">ENVIROMECH</div>
   <div>
-    <a href="#features">Features</a>
-    <a href="#pricing">Pricing</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#demo">Demo</a>
+    <a href="#ai">AI</a>
     <a href="#contact">Contact</a>
   </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-text fade">
-    <h1>Build Smarter.<br><span>Design Sustainable.</span></h1>
-    <p>AI-powered CAD guidance for faster, eco-friendly prototyping.</p>
-
-    <a href="#contact" class="btn primary">Get Started</a>
-    <a href="#features" class="btn secondary">Explore</a>
-
-    <div class="stats">
-      <div class="stat"><h3>40%</h3><p>Waste Reduction</p></div>
-      <div class="stat"><h3>2x</h3><p>Faster Builds</p></div>
-      <div class="stat"><h3>500+</h3><p>Users</p></div>
-    </div>
-  </div>
-
-  <img src="logo.png" width="350">
+  <h1>AI Powered <span>CAD Platform</span></h1>
+  <p>Design • Optimize • Prototype • Sustain</p>
+  <a href="#dashboard" class="btn">View Platform</a>
 </div>
 
 <div class="container">
 
-<!-- PROBLEM -->
-<div class="section fade">
-  <h2>Industry Problem</h2>
-  <div class="card">
-    <h3>42–45% graduates lack practical skills</h3>
-    <p>Students struggle with prototyping due to lack of guidance and high costs.</p>
+<!-- DASHBOARD -->
+<div class="section" id="dashboard">
+  <h2>Platform Dashboard</h2>
+
+  <div class="dashboard">
+    <div class="top-bar">
+      <div class="metric">Waste ↓ 40%</div>
+      <div class="metric">Speed ↑ 2x</div>
+      <div class="metric">Accuracy ↑ 90%</div>
+    </div>
+
+    <div class="graph"></div>
+  </div>
+</div>
+
+<!-- CAD DEMO -->
+<div class="section" id="demo">
+  <h2>3D CAD Simulation</h2>
+
+  <div class="demo">
+    ⚙️ CAD MODEL
+  </div>
+</div>
+
+<!-- AI -->
+<div class="section" id="ai">
+  <h2>AI Assistant</h2>
+
+  <div class="chat">
+    <div class="msg">User: My part is failing</div>
+    <div class="msg">AI: Increase thickness by 2mm</div>
+    <div class="msg">AI: Switch to PLA material</div>
   </div>
 </div>
 
 <!-- FEATURES -->
-<div class="section" id="features">
-  <h2>Platform Features</h2>
+<div class="section">
+  <h2>Core Features</h2>
 
   <div class="grid">
-    <div class="card fade">Guided CAD Workflow</div>
-    <div class="card fade">AI Error Detection</div>
-    <div class="card fade">Eco Design Tips</div>
-    <div class="card fade">Templates</div>
-    <div class="card fade">Material Suggestions</div>
-    <div class="card fade">Cloud Dashboard</div>
+    <div class="card">Guided CAD Workflow</div>
+    <div class="card">AI Error Detection</div>
+    <div class="card">Eco Design Tips</div>
+    <div class="card">Rapid Prototyping</div>
   </div>
-</div>
-
-<!-- BENEFITS -->
-<div class="section fade">
-  <h2>What You Gain</h2>
-
-  <div class="grid">
-    <div class="card">Faster Projects</div>
-    <div class="card">Lower Cost</div>
-    <div class="card">Less Stress</div>
-    <div class="card">Better Results</div>
-  </div>
-</div>
-
-<!-- PRICING -->
-<div class="section pricing fade" id="pricing">
-  <h2>Pricing</h2>
-  <h1>₹299 / month</h1>
-  <p>Affordable subscription for students</p>
 </div>
 
 <!-- CONTACT -->
 <div class="section" id="contact">
   <h2>Contact</h2>
 
-  <div class="grid">
-    <div class="contact-card">WhatsApp<br>9870694410</div>
-    <div class="contact-card">WhatsApp<br>9528992913</div>
-    <div class="contact-card">Email<br>krishnamathur00001@gmail.com</div>
+  <div class="contact">
+    WhatsApp: 9870694410<br>
+    Email: krishnamathur00001@gmail.com
   </div>
 </div>
 
@@ -246,19 +238,6 @@ footer{
 <footer>
 © 2026 Enviromech Solutions
 </footer>
-
-<script>
-const faders = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', () => {
-  faders.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      el.classList.add('show');
-    }
-  });
-});
-</script>
 
 </body>
 </html>
